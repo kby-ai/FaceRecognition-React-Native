@@ -98,6 +98,8 @@ class FaceRecognitionSdkViewManager(private val reactContext: ReactApplicationCo
   fun setLivenessLevel(view: View, livenessLevel: Int) {
     Log.e("TestEngine", "setLivenessLevel " + livenessLevel)
     this.checkLivenessLevel = livenessLevel
+
+    startCamera()
   }
 
   @ReactProp(name = "cameraLens")

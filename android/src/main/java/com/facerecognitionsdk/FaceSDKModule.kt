@@ -111,20 +111,20 @@ class FaceSDKModule(reactContext: ReactApplicationContext) : ReactContextBaseJav
   @ReactMethod
   fun similarityCalculation(templates1: String, templates2: String, promise: Promise) {
     val similarity = FaceSDK.similarityCalculation(Utils.base64ToByteArray(templates1), Utils.base64ToByteArray(templates2))
-    Log.e("TestEngine", "similarityCalculation" + similarity)
+    Log.e("KBY", "similarityCalculation" + similarity)
     promise.resolve(similarity)
   }
 
   @ReactMethod
   fun startCamera(promise: Promise) {
-    Log.e("TestEngine", "start camera" + faceRecognitionSdkViewManager);
+    Log.e("KBY", "start camera" + faceRecognitionSdkViewManager);
     faceRecognitionSdkViewManager?.startCamera()
     promise.resolve(0)
   }
 
   @ReactMethod
   fun stopCamera(promise: Promise) {
-    Log.e("TestEngine", "stop camera");
+    Log.e("KBY", "stop camera");
     faceRecognitionSdkViewManager?.stopCamera()
     promise.resolve(0)
   }

@@ -8,9 +8,9 @@ import android.graphics.Matrix
 import android.net.Uri
 import android.provider.MediaStore
 import android.util.Base64
-
+import android.util.Log
 import com.kbyai.facesdk.FaceBox
-
+import android.media.ExifInterface
 import java.io.IOException
 import java.io.InputStream
 
@@ -59,28 +59,39 @@ object Utils {
 
   @Throws(IOException::class)
   fun getCorrectlyOrientedImage(context: Context, photoUri: Uri): Bitmap {
-    var isStream: InputStream? = context.contentResolver.openInputStream(photoUri)
-    val dbo = BitmapFactory.Options()
-    dbo.inJustDecodeBounds = true
-    BitmapFactory.decodeStream(isStream, null, dbo)
-    isStream?.close()
-
-    val orientation = getOrientation(context, photoUri)
+    var rotate = 0
+    val inputStream: InputStream? = context.contentResolver.openInputStream(photoUri)
+    inputStream?.let {
+      val exif = ExifInterface(it)
+      val orientation = exif.getAttributeInt(
+        ExifInterface.TAG_ORIENTATION,
+        ExifInterface.ORIENTATION_NORMAL
+      )
+      rotate = when (orientation) {
+        ExifInterface.ORIENTATION_ROTATE_270 -> 270
+        ExifInterface.ORIENTATION_ROTATE_180 -> 180
+        ExifInterface.ORIENTATION_ROTATE_90 -> 90
+        else -> 0
+      }
+      it.close()
+    }
 
     var srcBitmap: Bitmap
-    isStream = context.contentResolver.openInputStream(photoUri)
+    val isStream = context.contentResolver.openInputStream(photoUri)
     srcBitmap = BitmapFactory.decodeStream(isStream)
     isStream?.close()
 
-    if (orientation > 0) {
-      val matrix = Matrix()
-      matrix.postRotate(orientation.toFloat())
-
-      srcBitmap = Bitmap.createBitmap(srcBitmap, 0, 0, srcBitmap.width,
-        srcBitmap.height, matrix, true)
-    }
-
-    return srcBitmap
+    val matrix = Matrix()
+    matrix.postRotate(rotate.toFloat())
+    return Bitmap.createBitmap(
+      srcBitmap,
+      0,
+      0,
+      srcBitmap.width,
+      srcBitmap.height,
+      matrix,
+      true
+    )
   }
 
   fun byteArrayToBase64(byteArray: ByteArray): String {

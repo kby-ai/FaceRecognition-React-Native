@@ -1,5 +1,5 @@
 // FaceRecognitionPage.js
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, } from 'react-native';
 import { FaceRecognitionSdkView, FaceSDKModule } from 'face-recognition-sdk';
 import { check, request, PERMISSIONS, RESULTS } from 'react-native-permissions'
@@ -13,10 +13,57 @@ const cameraPermission = Platform.select({
     android: PERMISSIONS.ANDROID.CAMERA,
 })
 
+const FaceRecognitionView = () => {
+    const isFocused = useIsFocused();
+    const sdkViewRef = useRef(null);
+
+    useEffect(() => {
+        if (isFocused) {
+            startCamera();
+        } else {
+            stopCamera();
+        }
+
+        return () => {
+            stopCamera();
+        };
+    }, [isFocused]);
+
+    const startCamera = async () => {
+        await FaceSDKModule.startCamera();
+    };
+
+    const stopCamera = async () => {
+        await FaceSDKModule.stopCamera();
+    };
+
+    const handleViewLayout = () => {
+        if (isFocused && sdkViewRef.current) {
+            startCamera();
+        } else {
+            stopCamera();
+        }
+    };
+
+    return (
+        <View style={styles.container}>
+            <View style={styles.box} onLayout={handleViewLayout}>
+                <FaceRecognitionSdkView
+                    ref={sdkViewRef}
+                    style={{ flex: 1 }}
+                    livenessLevel={1}
+                    cameraLens={1}
+                />
+            </View>
+        </View>
+    );
+};
+
 const FaceRecognitionPage = ({ navigation, route }) => {
 
     const { persons } = route.params;
     const [faces, setFaces] = useState([]);
+    const [cameraShow, setCameraShow] = useState(false);
     const isFocused = useIsFocused();
 
     var recognized = false;
@@ -26,7 +73,6 @@ const FaceRecognitionPage = ({ navigation, route }) => {
     };
 
     useEffect(() => {
-        console.log("isFocused", isFocused);
         checkPermission();
 
         const eventEmitter = new NativeEventEmitter(FaceSDKModule);
@@ -37,11 +83,12 @@ const FaceRecognitionPage = ({ navigation, route }) => {
             }
         });
 
-        return () => {
-            stopCamera();
-            // AppState.removeEventListener('change', handleAppStateChange);
-            // BackHandler.removeEventListener('hardwareBackPress', handleBackButton);
+        if(isFocused)
+            recognized = false;
+        else
+            recognized = true;
 
+        return () => {
             eventListener.remove();
         };
 
@@ -96,15 +143,6 @@ const FaceRecognitionPage = ({ navigation, route }) => {
         }
     };
 
-
-    const startCamera = async () => {
-        await FaceSDKModule.startCamera();
-    }
-
-    const stopCamera = async () => {
-        await FaceSDKModule.stopCamera();
-    }
-
     const checkPermission = async () => {
         const permissionStatus = await check(cameraPermission);
         handlePermissionStatus(permissionStatus);
@@ -124,7 +162,7 @@ const FaceRecognitionPage = ({ navigation, route }) => {
                 requestPermission();
                 break;
             case RESULTS.GRANTED:
-                startCamera();
+                setCameraShow(true);
                 break;
             case RESULTS.BLOCKED:
                 break;
@@ -146,8 +184,13 @@ const FaceRecognitionPage = ({ navigation, route }) => {
                 </View>
             </View>
             <View style={styles.body}>
-                <FaceRecognitionSdkView style={styles.box} livenessLevel={1} cameraLens={1} />
-
+                {cameraShow ? (
+                    <FaceRecognitionView />
+                ) : (
+                    <View>
+                        <Text>Camera permission issue.</Text>
+                    </View>
+                )}
                 <View
                     style={{
                         flex: 1,
