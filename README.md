@@ -85,7 +85,7 @@ https://drive.google.com/file/d/1cn_89fYDYhq8ANXs2epO-KBv7p5ZnWcA/view?usp=shari
 
 The face recognition project relies on kby-ai's SDK, which requires a license for each application ID.
 
-- The code below shows how to use the license: https://github.com/kby-ai/FaceRecognition-Flutter/blob/0ed0fea9f86d73d08aff81e25da479c62f2ebc05/lib/main.dart#L68-L94
+- The code below shows how to use the license: https://github.com/kby-ai/FaceRecognition-React-Native/blob/5b8ffdd1fb6956da7e1c1acfd7337f07d621d019/example/src/MainPage.tsx#L17-L24
 
 - To request a license, please contact us:
 ```
