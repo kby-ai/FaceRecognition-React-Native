@@ -73,19 +73,12 @@ The face recognition project relies on kby-ai's SDK, which requires a license fo
 
 - The code below shows how to use the license: https://github.com/kby-ai/FaceRecognition-React-Native/blob/5b8ffdd1fb6956da7e1c1acfd7337f07d621d019/example/src/MainPage.tsx#L17-L24
 
-- To request a license, please contact us:
-```
-Email: contact@kby-ai.com
-
-Telegram: @kbyai
-
-WhatsApp: +19092802609
-
-Skype: live:.cid.66e2522354b1049b
-
-Facebook: https://www.facebook.com/KBYAI
-```
-
+- To request a license, please contact us:</br>
+🧙`Email:` contact@kby-ai.com</br>
+🧙`Telegram:` @kbyai</br>
+🧙`WhatsApp:` +19092802609</br>
+🧙`Skype:` live:.cid.66e2522354b1049b</br>
+🧙`Facebook:` https://www.facebook.com/KBYAI</br>
 ## How To Run
 ### 1. React-Native Setup
   Make sure you have React-Native installed. 
