@@ -13,9 +13,9 @@
 
 ## Overview
 
-This repository demonstrates both face liveness detection and face recognition technology for React Native on Android and iOS platform.
+This repository demonstrates both face liveness detection and face recognition technology for React Native on Android and iOS platforms.
 
-> In this repository, we integrated KBY-AI's both face liveness detection and face recognition technology into React Native project for both Android and iOS.</br>
+> In this repository, we integrated KBY-AI's face liveness detection and face recognition technology into the React-Native project for both Android and iOS.</br>
 ### ◾FaceSDK(Mobile) Details
 
   | Basic      | 🔽 Standard | Premium |
