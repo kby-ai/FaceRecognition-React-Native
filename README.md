@@ -44,12 +44,18 @@ This repository demonstrates both face liveness detection and face recognition t
 
  > To get Face SDK(server), please visit products [here](https://github.com/kby-ai/Product).<br/>
 
-## Try the APK
+## Try with Demo App
 
 ### Google Play
 
 <a href="https://play.google.com/store/apps/details?id=com.kbyai.facerecognition" target="_blank">
   <img alt="" src="https://user-images.githubusercontent.com/125717930/230804673-17c99e7d-6a21-4a64-8b9e-a465142da148.png" height=80/>
+</a>
+
+### App Store
+
+<a href="https://apps.apple.com/us/app/kby-ai-face-recognition/id6448648922" target="_blank">
+  <img alt="" src="https://user-images.githubusercontent.com/125717930/235276083-d20fe057-214d-497c-a431-4569bbeed2fe.png" height=80/>
 </a>
 
 ## Performance Video
@@ -86,51 +92,56 @@ The face recognition project relies on kby-ai's SDK, which requires a license fo
 🧙`Skype:` [live:.cid.66e2522354b1049b](https://join.skype.com/invite/OffY2r1NUFev)</br>
 🧙`Facebook:` https://www.facebook.com/KBYAI</br>
 ## How To Run
-### 1. React-Native Setup
-  Make sure you have React-Native installed. 
-
-  If you don't have React-Native installed, please follow the instructions provided in the official React-Native documentation: https://reactnative.dev/docs/environment-setup
-  
-### 2. Running the App
-
+### 1. Setting Up React-Native Development Environment
+  Make sure you have React-Native installed.</br> 
+  If you don't have React-Native installed, please follow the instructions provided in the official React-Native documentation [here](https://reactnative.dev/docs/environment-setup).</br>
+### 2. Running the Android App
   Run the following commands:
-  
-  ```
+  ```bash
   yarn
   yarn example android
   ```
+### 3. Running the iOS App
+  Run the following commands:
+  ```bash
+  yarn
+  cd example
+  yarn
+  cd ios
+  pod install
+  ```
+  Please open the `FaceRecognitionSdkExample.xcworkspace` in Xcode and run the app.
 ## About SDK
 ### 1. Setup
-### 1.1 'Face SDK' Setup
+### 1.1 Setting Up Face SDK
   > Android
 
-  -  Copy the SDK (libfacesdk folder) to the 'android' folder of your project.
-
-  -  Add SDK to the project in settings.gradle
-  ```
+  -  Copy the SDK (folder: `libfacesdk`) to the folder `android` in your project path.</br>
+  -  Add the SDK to the project in `settings.gradle`
+  ```java
   include ':libfacesdk'
   ```
 ### 2 API Usages
 #### 2.1 FaceSDKModule
-  - Activate the 'FaceSDKModule' by calling the 'setActivation' method:
-  ```
+  - Activate the `FaceSDKModule` by calling the `setActivation` method:
+  ```kotlin
         var ret = await FaceSDKModule.setActivation("...");
         console.log("set activation:", ret);
   ```
-  - Initialize the 'FaceSDKModule' by calling the 'initSDK' method:
-  ```
+  - Initialize the `FaceSDKModule` by calling the `initSDK` method:
+  ```kotlin
       var ret = await FaceSDKModule.initSDK();
   ```
-  - Set parameters using the 'setParam' method:
-  ```
+  - Set parameters using the  `setParam` method:
+  ```kotlin
     var ret = await FaceSDKModule.setParam(checkLivenessLevel);
   ```
-  - Extract faces using the 'extractFaces' method:
-  ```
+  - Extract faces using the `extractFaces` method:
+  ```kotlin
     var faceBoxes = await FaceSDKModule.extractFaces(uri);
   ```
-  - Calculate similarity between faces using the 'similarityCalculation' method:
-  ```
+  - Calculate the similarity between faces using the `similarityCalculation` method:
+  ```kotlin
     const similarity = await FaceSDKModule.similarityCalculation(
         face.templates,
         person.templates
@@ -139,12 +150,11 @@ The face recognition project relies on kby-ai's SDK, which requires a license fo
 #### 2.2 FaceRecognitionSdkView
   - To build the native camera screen and process face detection, please refer to the [example/src/FaceRecognitionPage.tsx](https://github.com/kby-ai/FaceRecognition-React-Native/blob/main/example/src/FaceRecognitionPage.tsx) file in the repository. 
   
-```
+```tsx
   <FaceRecognitionSdkView style={styles.box} livenessLevel={1} cameraLens={1} />
 ```
-
  - To obtain the face detection results, use the following code:
-```
+```tsx
       const eventEmitter = new NativeEventEmitter(FaceSDKModule);
       let eventListener = eventEmitter.addListener('onFaceDetected', (event) => {
           setFaces(event);
@@ -153,9 +163,8 @@ The face recognition project relies on kby-ai's SDK, which requires a license fo
           }
       });
 ```
-
   - To start and stop the camera, use the following code:
-```
+```tsx
     //Start Camera
     const startCamera = async () => {
         await FaceSDKModule.startCamera();
