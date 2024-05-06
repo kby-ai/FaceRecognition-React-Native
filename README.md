@@ -91,7 +91,7 @@ The face recognition project relies on kby-ai's SDK, which requires a license fo
 
   If you don't have React-Native installed, please follow the instructions provided in the official React-Native documentation: https://reactnative.dev/docs/environment-setup
   
-### 2. Running the App
+### 2. Running the Android App
 
   Run the following commands:
   
@@ -99,6 +99,19 @@ The face recognition project relies on kby-ai's SDK, which requires a license fo
   yarn
   yarn example android
   ```
+### 3. Running the iOS App
+
+  Run the following commands:
+  
+  ```
+  yarn
+  cd example
+  yarn
+  cd ios
+  pod install
+  ```
+
+  Please open the 'FaceRecognitionSdkExample.xcworkspace' in xcode and run the app.
 ## About SDK
 ### 1. Setup
 ### 1.1 'Face SDK' Setup
