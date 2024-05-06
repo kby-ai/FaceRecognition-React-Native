@@ -138,7 +138,6 @@ RCT_EXPORT_VIEW_PROPERTY(onFaceDetected, RCTBubblingEventBlock)
     dispatch_async(self.sessionQueue, ^{
         [self.session beginConfiguration];
         
-        printf("initialize capture session\n");
         NSError *error = nil;
         AVCaptureDevice *captureDevice = nil;
         NSArray* devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
@@ -284,7 +283,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 }
 
 +(void) startCamera {
-  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), g_faceRecognitionSdkViewManager.sessionQueue, ^{
+  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
    if(g_faceRecognitionSdkViewManager != nil) {
     [g_faceRecognitionSdkViewManager startSession];
    }    
@@ -292,7 +291,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 }
 
 +(void) stopCamera {
-  dispatch_async(g_faceRecognitionSdkViewManager.sessionQueue, ^{
+  dispatch_async(dispatch_get_main_queue(), ^{
    if(g_faceRecognitionSdkViewManager != nil) {
     [g_faceRecognitionSdkViewManager stopSession];
    }
