@@ -41,6 +41,7 @@ This repository demonstrates both face liveness detection and face recognition t
   | ➡️        | <b>[Face Recognition - React-Native](https://github.com/kby-ai/FaceRecognition-React-Native)</b>        | <b>Standard SDK</b> |
   | 7        | [Face Attribute - Android](https://github.com/kby-ai/FaceAttribute-Android)        | Premium SDK |
   | 8        | [Face Attribute - iOS](https://github.com/kby-ai/FaceAttribute-iOS)        | Premium SDK |
+  | 9        | [Face Attribute - Flutter](https://github.com/kby-ai/FaceAttribute-Flutter)        | Premium SDK |
 
  > To get Face SDK(server), please visit products [here](https://github.com/kby-ai/Product).<br/>
 
