@@ -92,7 +92,7 @@ You can visit our YouTube video [here](https://www.youtube.com/watch?v=HpDggnWsG
 
 The face recognition project relies on `KBY-AI`'s SDK, which requires a license for each `application ID`.
 
-- The code below shows how to use the license: https://github.com/kby-ai/FaceRecognition-React-Native/blob/5b8ffdd1fb6956da7e1c1acfd7337f07d621d019/example/src/MainPage.tsx#L17-L24
+- The code below shows how to use the license: https://github.com/kby-ai/FaceRecognition-FaceLivenessDetection-React-Native/blob/d8527b99961fc68b6c672f4ac01695513d917a7d/example/src/MainPage.tsx#L17-L34
 
 - To request a license, please contact us:</br>
 🧙`Email:` contact@kby-ai.com</br>
