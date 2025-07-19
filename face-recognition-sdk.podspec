@@ -14,6 +14,8 @@ Pod::Spec.new do |s|
   s.platforms    = { :ios => "11.0" }
   s.source       = { :git => "https://github.com/kby-ai/FaceRecognition-React-Native.git", :tag => "#{s.version}" }
 
+  s.vendored_frameworks = "ios/**/facesdk.framework"
+
   s.source_files = "ios/**/*.{h,m,mm,swift}"
 
   # Use install_modules_dependencies helper to install the dependencies if React Native version >=0.71.0.

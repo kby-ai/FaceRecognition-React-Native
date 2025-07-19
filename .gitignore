@@ -57,7 +57,6 @@ yarn-error.log
 .yarn/cache/
 example/.yarn/cache/
 
-
 # BUCK
 buck-out/
 \.buckd/

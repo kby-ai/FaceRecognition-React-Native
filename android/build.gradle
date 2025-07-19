@@ -86,8 +86,12 @@ dependencies {
 
   // implementation files('libs/facesdk.aar')
   implementation project(path: ':libfacesdk')
+<<<<<<< HEAD
   implementation 'io.fotoapparat:fotoapparat:2.6.0'
   // implementation 'io.fotoapparat:fotoapparat:2.7.0'
+=======
+  implementation 'io.fotoapparat:fotoapparat:2.7.0'
+>>>>>>> ios-main
 }
 
 if (isNewArchitectureEnabled()) {
