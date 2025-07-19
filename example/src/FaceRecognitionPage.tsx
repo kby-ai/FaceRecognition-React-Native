@@ -25,9 +25,7 @@ const FaceRecognitionView = () => {
         }
 
         return () => {
-            if(isFocused) {
-                stopCamera();
-            }
+            stopCamera();
         };
     }, [isFocused]);
 
@@ -139,8 +137,7 @@ const FaceRecognitionPage = ({ navigation, route }) => {
 
         if (maxSimilarity > 0.8 && maxLiveness > 0.7) {
             recognized = true;
-            
-            navigation.replace('Result', { enrolledFace, identifiedFace, maxSimilarityName, maxSimilarity, maxLiveness, maxYaw, maxRoll, maxPitch });
+            navigation.navigate('Result', { enrolledFace, identifiedFace, maxSimilarityName, maxSimilarity, maxLiveness, maxYaw, maxRoll, maxPitch });
 
             setFaces([]);
         }
@@ -157,6 +154,7 @@ const FaceRecognitionPage = ({ navigation, route }) => {
     };
 
     const handlePermissionStatus = (status) => {
+        console.log("handlePermissionStatus", status);
         switch (status) {
             case RESULTS.UNAVAILABLE:
                 break;
