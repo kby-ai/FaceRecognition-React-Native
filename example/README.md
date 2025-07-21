@@ -77,3 +77,54 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+
+
+_Last updated: July 21, 2025_
+
+# FaceRecognition-React-Native Setup Guide
+
+## Steps to Integrate FaceSDK.framework and Build the iOS Project Successfully
+
+1. **Open Project Workspace in Xcode**  
+   Open the `.xcworkspace` file (not `.xcodeproj`) using Xcode.
+
+2. **Add FaceSDK.framework to the Project**  
+   - In the Xcode Project Navigator, right-click on your project folder (top-level blue icon).  
+   - Choose **"Add Files to '[YourProjectName]'"**.  
+   - Navigate to the root-level `ios` folder of your project.  
+   - Select the `FaceSDK.framework` folder and click **Add**.
+
+3. **Set the Correct Team for Code Signing**  
+   - In the left pane, click on your project name (top of the file list).  
+   - Under the **Targets** section, select your app target.  
+   - Go to the **Signing & Capabilities** tab.  
+   - In the **Team** dropdown, select your registered Apple Developer team.
+
+4. **Sign in with Apple Developer Account (if needed)**  
+   If no team appears or the correct one is missing:  
+   - Go to **Xcode > Settings > Accounts**.  
+   - Click the **"+"** button and log in with your Apple Developer credentials.
+
+5. **Build the Project**  
+   After adding the framework and setting the team, build the project using **Cmd + B**.
+
+---
+
+## Steps to Run FaceRecognition-React-Native-main_old (For Android)
+
+1. In the root directory, run `npm install`  
+   `FaceRecognition-React-Native-main_old> npm install`
+
+2. Go to the example directory  
+   `FaceRecognition-React-Native-main_old> cd example`
+
+3. In the example directory, run `npm install` again  
+   `FaceRecognition-React-Native-main_old/example> npm install`
+
+4. Open `android/build.gradle` file from the root level and change:  
+   `implementation 'io.fotoapparat:fotoapparat:2.7.0'`  
+   to  
+   `implementation 'io.fotoapparat:fotoapparat:2.6.0'`  
+   It will look like this:  
+
