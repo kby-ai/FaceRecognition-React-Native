@@ -42,11 +42,6 @@ This repository demonstrates both `face liveness detection` and `face recognitio
   |------------------|------------------|------------------|
   | 1        | [Face Liveness Detection - Android](https://github.com/kby-ai/FaceLivenessDetection-Android)    | Basic SDK |
   | 2        | [Face Liveness Detection - iOS](https://github.com/kby-ai/FaceLivenessDetection-iOS)    | Basic SDK |
-  | 3        | [Face Recognition - Android](https://github.com/kby-ai/FaceRecognition-Android)    | Standard SDK |
-  | 4        | [Face Recognition - iOS](https://github.com/kby-ai/FaceRecognition-iOS)    | Standard SDK |
-  | 5        | [Face Recognition - Flutter](https://github.com/kby-ai/FaceRecognition-Flutter)        | Standard SDK |
-  | 6        | [Face Recognition - Ionic-Cordova](https://github.com/kby-ai/FaceRececogniion-Ionic-Cordova)        | Standard SDK |
-  | ➡️        | <b>[Face Recognition - React-Native](https://github.com/kby-ai/FaceRecognition-React-Native)</b>        | <b>Standard SDK</b> |
   | 3        | [Face Recognition + Face Liveness Detection - Android](https://github.com/kby-ai/FaceRecognition-Android)    | Standard SDK |
   | 4        | [Face Recognition + Face Liveness Detection - iOS](https://github.com/kby-ai/FaceRecognition-iOS)    | Standard SDK |
   | 5        | [Face Recognition + Face Liveness Detection - Flutter](https://github.com/kby-ai/FaceRecognition-Flutter)        | Standard SDK |
@@ -103,8 +98,6 @@ The face recognition project relies on `KBY-AI`'s SDK, which requires a license 
 🧙`Email:` contact@kby-ai.com</br>
 🧙`Telegram:` [@kbyai](https://t.me/kbyai)</br>
 🧙`WhatsApp:` [+19092802609](https://wa.me/+19092802609)</br>
-🧙`Skype:` [live:.cid.66e2522354b1049b](https://join.skype.com/invite/OffY2r1NUFev)</br>
-🧙`Facebook:` https://www.facebook.com/KBYAI</br>
 🧙`Discord:` [KBY-AI](https://discord.gg/CgHtWQ3k9T)</br>
 🧙`Teams:` [KBY-AI](https://teams.live.com/l/invite/FBAYGB1-IlXkuQM3AY)</br>
 
