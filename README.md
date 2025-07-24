@@ -4,6 +4,13 @@
   </a>  
 </p>
 
+### Our facial recognition algorithm is globally top-ranked by NIST in the FRVT 1:1 leaderboards. <span><img src="https://github.com/kby-ai/.github/assets/125717930/bcf351c5-8b7a-496e-a8f9-c236eb8ad59e" alt="badge" width="36" height="20"></span>  
+[Latest NIST FRVT evaluation report 2024-12-20](https://pages.nist.gov/frvt/html/frvt11.html)  
+
+![FRVT Sheet](https://github.com/user-attachments/assets/16b4cee2-3a91-453f-94e0-9e81262393d7)
+
+#### 🆔 ID Document Liveness Detection - Linux - [Here](https://web.kby-ai.com)  <span><img src="https://github.com/kby-ai/.github/assets/125717930/bcf351c5-8b7a-496e-a8f9-c236eb8ad59e" alt="badge" width="36" height="20"></span>
+#### 🤗 Hugging Face - [Here](https://huggingface.co/kby-ai)
 #### 📚 Product & Resources - [Here](https://github.com/kby-ai/Product)
 #### 🛟 Help Center - [Here](https://docs.kby-ai.com)
 #### 💼 KYC Verification Demo - [Here](https://github.com/kby-ai/KYC-Verification-Demo-Android)
@@ -40,6 +47,11 @@ This repository demonstrates both `face liveness detection` and `face recognitio
   | 5        | [Face Recognition - Flutter](https://github.com/kby-ai/FaceRecognition-Flutter)        | Standard SDK |
   | 6        | [Face Recognition - Ionic-Cordova](https://github.com/kby-ai/FaceRececogniion-Ionic-Cordova)        | Standard SDK |
   | ➡️        | <b>[Face Recognition - React-Native](https://github.com/kby-ai/FaceRecognition-React-Native)</b>        | <b>Standard SDK</b> |
+  | 3        | [Face Recognition + Face Liveness Detection - Android](https://github.com/kby-ai/FaceRecognition-Android)    | Standard SDK |
+  | 4        | [Face Recognition + Face Liveness Detection - iOS](https://github.com/kby-ai/FaceRecognition-iOS)    | Standard SDK |
+  | 5        | [Face Recognition + Face Liveness Detection - Flutter](https://github.com/kby-ai/FaceRecognition-Flutter)        | Standard SDK |
+  | 6        | [Face Recognition + Face Liveness Detection - Ionic-Cordova](https://github.com/kby-ai/FaceRecognition-Ionic-Cordova)        | Standard SDK |
+  | ➡️        | <b>[Face Recognition + Face Liveness Detection - React-Native](https://github.com/kby-ai/FaceRecognition-React-Native)</b>        | <b>Standard SDK</b> |
   | 8        | [Face Attribute - Android](https://github.com/kby-ai/FaceAttribute-Android)        | Premium SDK |
   | 9        | [Face Attribute - iOS](https://github.com/kby-ai/FaceAttribute-iOS)        | Premium SDK |
   | 10        | [Face Attribute - Flutter](https://github.com/kby-ai/FaceAttribute-Flutter)        | Premium SDK |
@@ -62,8 +74,8 @@ This repository demonstrates both `face liveness detection` and `face recognitio
 
 ## Performance Video
 
-You can visit our YouTube video [here](https://www.youtube.com/watch?v=M7t_dpT-hOI) to see how well our demo app works.</br></br>
-[![Face Recognition Android](https://img.youtube.com/vi/M7t_dpT-hOI/0.jpg)](https://www.youtube.com/watch?v=M7t_dpT-hOI)
+You can visit our YouTube video [here](https://www.youtube.com/watch?v=HpDggnWsG1c) to see how well our demo app works.</br></br>
+[![Face Recognition Android](https://img.youtube.com/vi/HpDggnWsG1c/0.jpg)](https://www.youtube.com/watch?v=HpDggnWsG1c)
 
 
 ## Screenshots
@@ -85,7 +97,7 @@ You can visit our YouTube video [here](https://www.youtube.com/watch?v=M7t_dpT-h
 
 The face recognition project relies on `KBY-AI`'s SDK, which requires a license for each `application ID`.
 
-- The code below shows how to use the license: https://github.com/kby-ai/FaceRecognition-React-Native/blob/5b8ffdd1fb6956da7e1c1acfd7337f07d621d019/example/src/MainPage.tsx#L17-L24
+- The code below shows how to use the license: https://github.com/kby-ai/FaceRecognition-React-Native/blob/170b598257d015302ac87106d9022bbab8831248/example/src/MainPage.tsx#L17-L34
 
 - To request a license, please contact us:</br>
 🧙`Email:` contact@kby-ai.com</br>
@@ -93,6 +105,9 @@ The face recognition project relies on `KBY-AI`'s SDK, which requires a license 
 🧙`WhatsApp:` [+19092802609](https://wa.me/+19092802609)</br>
 🧙`Skype:` [live:.cid.66e2522354b1049b](https://join.skype.com/invite/OffY2r1NUFev)</br>
 🧙`Facebook:` https://www.facebook.com/KBYAI</br>
+🧙`Discord:` [KBY-AI](https://discord.gg/CgHtWQ3k9T)</br>
+🧙`Teams:` [KBY-AI](https://teams.live.com/l/invite/FBAYGB1-IlXkuQM3AY)</br>
+
 ## How To Run
 ### 1. Setting Up React-Native Development Environment
   Make sure you have `React-Native` installed.</br> 
@@ -177,3 +192,4 @@ The face recognition project relies on `KBY-AI`'s SDK, which requires a license 
         await FaceSDKModule.stopCamera();
     }
 ```
+
