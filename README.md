@@ -109,7 +109,7 @@ The face recognition project relies on `KBY-AI`'s SDK, which requires a license 
   Run the following commands:
   ```bash
   yarn
-  yarn example android
+  yarn example/android
   ```
 ### 3. Running the iOS App
   Run the following commands:
