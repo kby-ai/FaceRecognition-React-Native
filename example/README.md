@@ -111,6 +111,28 @@ _Last updated: July 21, 2025_
 
 ---
 
+## Steps to build Android Project from dev Successfully
+
+1. **Open Project Workspace in VSCode**  
+   
+2. **At root level install node_modules**  
+   - In the root directory, install node_modules by **npm install**  
+    // `FaceRecognition-React-Native-dev> npm install`
+
+3. **Goto example directory**  
+   -  Go to the example directory by **cd example** 
+    // `FaceRecognition-React-Native-dev> cd example`
+
+4. **In example directory install node_modules**  
+   - In the root directory, install node_modules by **npm install**  
+    // `FaceRecognition-React-Native-dev/example> npm install`
+   
+5. **Build the Project**  
+   - In the example directory build the project by **npx react-native run-android**  
+   // `FaceRecognition-React-Native-dev/example> npx react-native run-android`
+
+---
+
 
 ## Steps to Run FaceRecognition-React-Native-main_old (For Android)
 
@@ -123,37 +145,9 @@ _Last updated: July 21, 2025_
 3. In the example directory, run `npm install` again  
    `FaceRecognition-React-Native-main_old/example> npm install`
 
-4. Open `android/build.gradle` file from the root level and change:  
-   `implementation 'io.fotoapparat:fotoapparat:2.7.0'`  
-   to  
-   `implementation 'io.fotoapparat:fotoapparat:2.6.0'`  
-   It will look like this:  
-
-
-# FaceRecognition-React-Native-main_old (Android Setup Guide)
-
-Steps to run FaceRecognition-React-Native-main_old (For Android)
-
-1. In the root directory, run "npm install"  
-   // FaceRecognition-React-Native-main_old> npm install
-
-2. Go to the example directory by "cd example"  
-   // FaceRecognition-React-Native-main_old> cd example
-
-3. In the example directory, again run "npm install"  
-   // FaceRecognition-React-Native-main_old/example> npm install
-
-4. Open android/build.gradle file from the example directory and change:
-   io.fotoapparat:fotoapparat:2.7.0  
-   to  
-   io.fotoapparat:fotoapparat:2.6.0  
-
-   It will look like this:  
-   implementation 'io.fotoapparat:fotoapparat:2.6.0'  
-   // implementation 'io.fotoapparat:fotoapparat:2.7.0'
-
-5. In the example directory, run "npx react-native run-android"  
+4. In the example directory, run "npx react-native run-android"  
    // FaceRecognition-React-Native-main_old/example> npx react-native run-android
+
 
 Note: if you are building a React Native app, make sure you have set up environment variables and the device is connected (if you are using a real device), otherwise you can use an emulator.
 
