@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StatusBar, StyleSheet, View, TouchableOpacity, Image, Text, Platform } from 'react-native';
+import { StatusBar, StyleSheet, View, TouchableOpacity, Image, Text } from 'react-native';
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 import { FaceRecognitionSdkView, FaceSDKModule } from 'face-recognition-sdk';
 import SQLite from 'react-native-sqlite-storage';
@@ -11,26 +11,15 @@ const MainPage = ({ navigation }) => {
   const [persons, setPersons] = useState([]);
 
   useEffect(() => {
-
-    console.log("user effect");
     // This function will be executed after the component is mounted
     const initSDKAsync = async () => {
       try {
-        if(Platform.OS == 'ios') {
-          var ret = await FaceSDKModule.setActivation("JT0eKB2YoRpN67t6Uu820HQFN2mGBmxcKdimmBw05PBmGB1avf0impc0g+VomsgQ7DemNOdQ56bp" +
-            "2CaQmkE2b8nXxq+YTcbSNXEap0ds1kfRHS4R4tn/RHobGfaR97TPuLg+xP3Fn7Xro5xNjI1TiC50" +
-            "SPEfFAgiu+mbQKMaTHxiTSEqQkIDtbAHpiqxip/vZFKyby+/uYTZkaaLVleC8EeA4UEl2TNxQLS5" +
-            "eChxPQU/N9HIS/zij4ABeLpD8vbjq+EFptOE7guRbbdzpUHQwQ12eifCmCZZJhXFsIQR3WLWC9kR" +
-            "mWaKZhqYIXSz87+wfcHH5PhwL3CkN+0d9i5fNg==");
-          console.log("set activation:", ret);
-        } else {
-          var ret = await FaceSDKModule.setActivation("YeakDoPY+pf4Nf9Qx0efEuHfBnbJj5AxLpY20YbRJJ6/KQBclaIC/rqz9emhT/BpyurD/HXU6ezU" +
-            "fkJmn3P0yrStJtotgUOcC6+Nvpstm3HPRlHIIo1nTNQC1SJoEXvowPwkdvZrA+pFtzlZmPoQs4Jc" +
-            "byvCRU/MzCICAV+2unCZdfIBNa1Qbfkv1VJ9dPUpX6hAFjyuU6gCLJhE5Xg1TeLB/1KMrR3kU5rd" +
-            "uwOO+rOF3Hi1mFZBKI6HSLgCbEkYVNJTpeatsaBKcoN3hIPR7dNU54ICsHA6DyumTCVU31Pz+EGX" +
-            "gFdvq10c80LqcRPzScJjhTHm9in4m2VtQXA/Qw==");
-          console.log("set activation:", ret);
-        }
+        var ret = await FaceSDKModule.setActivation("BePdghcCJ6VWDMNYaYHLMJ3QhslLDlJHwq52hSiPswhbF42izz+0eE4qo6v9v0bY4QK0RwsZuqe1" +
+          "5Ea18VOoUwIVR3pP6ozY2xQbbKF/RAgQ8pMy2pqSslCULMcj3yRJz72XRbuDWDO5NpbavHCP5aIT" +
+          "BiAjgaVYgGrHbl/iqb4PP2O8cjRd7QmHj1Mye1vQWeQobzUaWtH4/2rF5X/BQKiz8qL/E7jccC6h" +
+          "6SsyEfxZUyZFiPSv/XKRClM4mxCJiWmIEaEvJpn0HTmqqIt8dGkhE/ptQjyi3d83uzna7yDRRe+j" +
+          "8fRYqeJlI7hgrMXU5We7xp1w5W0akIikG2Myrg==");
+        console.log("set activation:", ret);
 
         ret = await FaceSDKModule.initSDK();
 

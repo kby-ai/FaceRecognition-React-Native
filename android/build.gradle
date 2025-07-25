@@ -86,7 +86,8 @@ dependencies {
 
   // implementation files('libs/facesdk.aar')
   implementation project(path: ':libfacesdk')
-  implementation 'io.fotoapparat:fotoapparat:2.7.0'
+  implementation 'io.fotoapparat:fotoapparat:2.6.0'
+  // implementation 'io.fotoapparat:fotoapparat:2.7.0'
 }
 
 if (isNewArchitectureEnabled()) {
