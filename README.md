@@ -109,7 +109,16 @@ The face recognition project relies on `KBY-AI`'s SDK, which requires a license 
   Run the following commands:
   ```bash
   yarn
-  yarn example/android
+  cd example
+  yarn
+  yarn android
+  ```
+  Or you can run build by `npm` instead of `yarn` as follows:
+  ```bash
+  npm i
+  cd example
+  npm i
+  npx react-native run-android
   ```
 ### 3. Running the iOS App
   Run the following commands:
@@ -119,8 +128,20 @@ The face recognition project relies on `KBY-AI`'s SDK, which requires a license 
   yarn
   cd ios
   pod install
+  cd ..
+  yarn ios
   ```
   Please open the `FaceRecognitionSdkExample.xcworkspace` in `Xcode` and run the app.
+  Or you can build project by `npm` instead of `yarn` as follows:
+  ```bash
+  npm i
+  cd example
+  npm i
+  cd ios
+  pod install
+  cd ..
+  npx react-native run-ios
+  ```
 ## About SDK
 ### 1. Setup
 ### 1.1 Setting Up Face SDK
