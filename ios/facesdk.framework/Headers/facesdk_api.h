@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#if TARGET_OS_IOS
+
 NS_ASSUME_NONNULL_BEGIN
 
 enum SDK_ERROR
@@ -36,3 +38,6 @@ enum SDK_ERROR
 @end
 
 NS_ASSUME_NONNULL_END
+#endif
+
+#endif
