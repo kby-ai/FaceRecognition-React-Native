@@ -4,6 +4,8 @@
 //
 //  Created by user on 4/12/23.
 //
+#if TARGET_OS_IOS
+
 
 #import <Foundation/Foundation.h>
 
@@ -17,3 +19,4 @@ FOUNDATION_EXPORT const unsigned char facesdkVersionString[];
 
 
 #include "facesdk_api.h"
+#endif
