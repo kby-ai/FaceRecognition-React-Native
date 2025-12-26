@@ -22,11 +22,11 @@ const MainPage = ({ navigation }) => {
             "mWaKZhqYIXSz87+wfcHH5PhwL3CkN+0d9i5fNg==");
           console.log("set activation:", ret);
         } else {
-          var ret = await FaceSDKModule.setActivation("YeakDoPY+pf4Nf9Qx0efEuHfBnbJj5AxLpY20YbRJJ6/KQBclaIC/rqz9emhT/BpyurD/HXU6ezU" +
-            "fkJmn3P0yrStJtotgUOcC6+Nvpstm3HPRlHIIo1nTNQC1SJoEXvowPwkdvZrA+pFtzlZmPoQs4Jc" +
-            "byvCRU/MzCICAV+2unCZdfIBNa1Qbfkv1VJ9dPUpX6hAFjyuU6gCLJhE5Xg1TeLB/1KMrR3kU5rd" +
-            "uwOO+rOF3Hi1mFZBKI6HSLgCbEkYVNJTpeatsaBKcoN3hIPR7dNU54ICsHA6DyumTCVU31Pz+EGX" +
-            "gFdvq10c80LqcRPzScJjhTHm9in4m2VtQXA/Qw==");
+          var ret = await FaceSDKModule.setActivation("osTM1Du4CPuaDfAgyWBti2vOP6RPCqza0mtIDYLUTJalexklMhNTl7VThnVoqbdJ3/JrfwfKN71d" + 
+            "MC8l271OZGyOnAzzbw1gzszJBteA0hewNksceE4yXd/Zv/WTW34c+E7Wu0QLKsQgNGZ+1kV/vfOvw" + 
+            "fcn8ZNkfJycEu/f3tBpusxVWmSA8Hmj01AMpqwKdHCcLxlyAvnfWXAL2O4sHcbN5I3be+3AY6Q+Jl" + 
+            "SCbbvPL0P931mWpZggiRvBbud4mkdeKd1OFuldIKRhzQdWZYv+6MmRhtKl1LPfGnfKUqEycdDbMyp" + 
+            "Cr8wvvb33y6tqePW6700W2pcTr/c1l4Gw4g==");
           console.log("set activation:", ret);
         }
 
