@@ -13,7 +13,7 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		5242A6172E2810BE00E63DAA /* facesdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5242A6162E2810BE00E63DAA /* facesdk.framework */; platformFilter = ios; };
-		5242A6182E2810BE00E63DAA /* facesdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5242A6162E2810BE00E63DAA /* facesdk.framework */; };
+		5832AFC92F161EE8005269FC /* facesdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5242A6162E2810BE00E63DAA /* facesdk.framework */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		F49B8CD2053D3547B3C8D52A /* Pods_FaceRecognitionSdkExample_FaceRecognitionSdkExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BEAD3B1B426E0BD92F98B91 /* Pods_FaceRecognitionSdkExample_FaceRecognitionSdkExampleTests.framework */; };
 /* End PBXBuildFile section */
@@ -27,19 +27,6 @@
 			remoteInfo = FaceRecognitionSdkExample;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		5242A6142E27B1C000E63DAA /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		00E356EE1AD99517003FC87E /* FaceRecognitionSdkExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FaceRecognitionSdkExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5242A6182E2810BE00E63DAA /* facesdk.framework in Frameworks */,
+				5832AFC92F161EE8005269FC /* facesdk.framework in Frameworks */,
 				06FA82A896B37DF623A0F204 /* Pods_FaceRecognitionSdkExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,7 +190,6 @@
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
 				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
-				5242A6142E27B1C000E63DAA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -453,6 +439,7 @@
 			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-FaceRecognitionSdkExample-FaceRecognitionSdkExampleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = MXP7J5F28M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -473,7 +460,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mohapp.smartattendance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FaceRecognitionSdkExample.app/FaceRecognitionSdkExample";
 			};
@@ -485,6 +472,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = MXP7J5F28M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -501,7 +489,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mohapp.smartattendance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FaceRecognitionSdkExample.app/FaceRecognitionSdkExample";
 			};
@@ -516,7 +504,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6G7RACBX72;
+				DEVELOPMENT_TEAM = MXP7J5F28M;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -552,7 +540,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6G7RACBX72;
+				DEVELOPMENT_TEAM = MXP7J5F28M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

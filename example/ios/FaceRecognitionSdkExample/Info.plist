@@ -37,8 +37,22 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<key>UILaunchScreens</key>
+	<dict>
+		<key>UILaunchScreenDefinitions</key>
+		<array>
+			<dict>
+				<key>UILaunchScreenIdentifier</key>
+				<string></string>
+				<key>UIImageName</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>UIURLToLaunchScreenAssociations</key>
+		<dict/>
+		<key>UIDefaultLaunchScreen</key>
+		<string></string>
+	</dict>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -51,5 +65,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) uses the camera to capture images for user face verification through AWS Rekognition. This ensures secure authentication and accurate attendance tracking.</string>
 </dict>
 </plist>
