@@ -81,9 +81,6 @@
     "react": "*",
     "react-native": "*"
   },
-  "engines": {
-    "node": ">= 16.0.0"
-  },
   "packageManager": "yarn@3.6.1",
   "jest": {
     "preset": "react-native",
@@ -117,7 +114,6 @@
   "eslintConfig": {
     "root": true,
     "extends": [
-      "@react-native-community",
       "@react-native",
       "prettier"
     ],

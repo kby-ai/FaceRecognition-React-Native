@@ -1,13 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-  StatusBar,
-  StyleSheet,
-  View,
-  TouchableOpacity,
-  Image,
-  Text,
-  Platform,
-} from 'react-native';
+import { StatusBar, StyleSheet, View, TouchableOpacity, Image, Text, Platform } from 'react-native';
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 import { FaceRecognitionSdkView, FaceSDKModule } from 'face-recognition-sdk';
 import SQLite from 'react-native-sqlite-storage';
@@ -15,43 +7,42 @@ import PersonView from './PersonView';
 import Person from './Person';
 
 const MainPage = ({ navigation }) => {
+
   const [persons, setPersons] = useState([]);
 
   useEffect(() => {
+
+    console.log("user effect");
     // This function will be executed after the component is mounted
     const initSDKAsync = async () => {
       try {
-        if (Platform.OS == 'ios') {
-          var ret = await FaceSDKModule.setActivation(
-            'CCmZ1vK0n+93xyU0zjwezAdcABwSefvZqFnZohwL4qT702aeO+KURweuwotPqApmbC4jJoRCkTHtT8NZviHhJZKnQZxpip/PpjGihTiwMHnTIlDsd4/cu9virAXqcmBjZymrBo9qhsGxQn0u0+GTQbWf+hdj7W961zEB8+CJ433xOtWMVF70ms9CEKA822eh0uCHlNpCrRXpJfrEK1UXWNJ8glszxOlfS/QTqWCYMlbnsUWBbwc7m9QBcmrBa7Hc/BG1BzZ60Rd3Ou01r/prVm4VE5cvI99eZ85SbKo6JQtX8wDGgnNxkzT6KU5PcFESsKaxWPyDFWLQEanMpjBViQ=='
-          );
-          console.log('set activation:', ret);
+        if(Platform.OS == 'ios') {
+          var ret = await FaceSDKModule.setActivation("JT0eKB2YoRpN67t6Uu820HQFN2mGBmxcKdimmBw05PBmGB1avf0impc0g+VomsgQ7DemNOdQ56bp" +
+            "2CaQmkE2b8nXxq+YTcbSNXEap0ds1kfRHS4R4tn/RHobGfaR97TPuLg+xP3Fn7Xro5xNjI1TiC50" +
+            "SPEfFAgiu+mbQKMaTHxiTSEqQkIDtbAHpiqxip/vZFKyby+/uYTZkaaLVleC8EeA4UEl2TNxQLS5" +
+            "eChxPQU/N9HIS/zij4ABeLpD8vbjq+EFptOE7guRbbdzpUHQwQ12eifCmCZZJhXFsIQR3WLWC9kR" +
+            "mWaKZhqYIXSz87+wfcHH5PhwL3CkN+0d9i5fNg==");
+          console.log("set activation:", ret);
         } else {
-          var ret = await FaceSDKModule.setActivation(
-            'osTM1Du4CPuaDfAgyWBti2vOP6RPCqza0mtIDYLUTJalexklMhNTl7VThnVoqbdJ3/JrfwfKN71d' +
-              'MC8l271OZGyOnAzzbw1gzszJBteA0hewNksceE4yXd/Zv/WTW34c+E7Wu0QLKsQgNGZ+1kV/vfOvw' +
-              'fcn8ZNkfJycEu/f3tBpusxVWmSA8Hmj01AMpqwKdHCcLxlyAvnfWXAL2O4sHcbN5I3be+3AY6Q+Jl' +
-              'SCbbvPL0P931mWpZggiRvBbud4mkdeKd1OFuldIKRhzQdWZYv+6MmRhtKl1LPfGnfKUqEycdDbMyp' +
-              'Cr8wvvb33y6tqePW6700W2pcTr/c1l4Gw4g=='
-          );
-          console.log('set activation:', ret);
+          var ret = await FaceSDKModule.setActivation("YeakDoPY+pf4Nf9Qx0efEuHfBnbJj5AxLpY20YbRJJ6/KQBclaIC/rqz9emhT/BpyurD/HXU6ezU" +
+            "fkJmn3P0yrStJtotgUOcC6+Nvpstm3HPRlHIIo1nTNQC1SJoEXvowPwkdvZrA+pFtzlZmPoQs4Jc" +
+            "byvCRU/MzCICAV+2unCZdfIBNa1Qbfkv1VJ9dPUpX6hAFjyuU6gCLJhE5Xg1TeLB/1KMrR3kU5rd" +
+            "uwOO+rOF3Hi1mFZBKI6HSLgCbEkYVNJTpeatsaBKcoN3hIPR7dNU54ICsHA6DyumTCVU31Pz+EGX" +
+            "gFdvq10c80LqcRPzScJjhTHm9in4m2VtQXA/Qw==");
+          console.log("set activation:", ret);
         }
 
         ret = await FaceSDKModule.initSDK();
 
-        console.log('init sdk:', ret);
+        console.log("init sdk:", ret);
       } catch (error) {
-        console.error('Error setting activation:', error);
+        console.error("Error setting activation:", error);
       }
     };
 
     const createDB = () => {
       // Create or open the database
-      const db = SQLite.openDatabase(
-        { name: 'person1.db', location: 'default' },
-        () => {},
-        errorCB
-      );
+      const db = SQLite.openDatabase({ name: 'person1.db', location: 'default' }, () => { }, errorCB);
 
       // Create the table
       db.transaction((tx) => {
@@ -62,7 +53,7 @@ const MainPage = ({ navigation }) => {
           (error) => console.log('Error creating table:', error)
         );
       });
-    };
+    }
 
     initSDKAsync();
     createDB();
@@ -72,19 +63,15 @@ const MainPage = ({ navigation }) => {
     return () => {
       // console.log('Component unmounted');
     };
-  }, []); // The empty dependency array ensures the effect runs only once
+  }, []); // The empty dependency array ensures the effect runs only once  
 
   const errorCB = (err) => {
-    console.log('SQL Error: ' + err);
+    console.log("SQL Error: " + err);
   };
 
   const loadAllPersons = async () => {
     try {
-      const db = SQLite.openDatabase(
-        { name: 'person1.db', location: 'default' },
-        () => {},
-        errorCB
-      );
+      const db = SQLite.openDatabase({ name: 'person1.db', location: 'default' }, () => { }, errorCB);
 
       await db.transaction((tx) => {
         tx.executeSql(
@@ -95,7 +82,7 @@ const MainPage = ({ navigation }) => {
             const persons = [];
             for (let i = 0; i < rows.length; i++) {
               const row = rows.item(i);
-              console.log('person: ', row.name);
+              console.log("person: ", row.name);
               persons.push({
                 name: row.name,
                 faceJpg: row.faceJpg,
@@ -116,17 +103,14 @@ const MainPage = ({ navigation }) => {
 
   const insertPerson = async (person) => {
     try {
-      const db = SQLite.openDatabase(
-        { name: 'person1.db', location: 'default' },
-        () => {},
-        errorCB
-      );
+      const db = SQLite.openDatabase({ name: 'person1.db', location: 'default' }, () => { }, errorCB);
 
       await db.transaction((tx) => {
         tx.executeSql(
           'INSERT INTO person (name, faceJpg, templates) VALUES (?, ?, ?)',
           [person.name, person.faceJpg, person.templates],
           (_, result) => {
+
             setPersons([...persons, person]);
             console.log('Person inserted successfully1');
           },
@@ -135,18 +119,15 @@ const MainPage = ({ navigation }) => {
           }
         );
       });
+
     } catch (error) {
       console.log('Error opening database:', error);
     }
-  };
+  }
 
   const deletePerson = async (index) => {
     try {
-      const db = SQLite.openDatabase(
-        { name: 'person1.db', location: 'default' },
-        () => {},
-        errorCB
-      );
+      const db = SQLite.openDatabase({ name: 'person1.db', location: 'default' }, () => { }, errorCB);
 
       const person = persons[index];
 
@@ -168,7 +149,7 @@ const MainPage = ({ navigation }) => {
     } catch (error) {
       console.log('Error opening database:', error);
     }
-  };
+  }
 
   const registerPerson = async (uri) => {
     var faceBoxes = await FaceSDKModule.extractFaces(uri);
@@ -180,13 +161,13 @@ const MainPage = ({ navigation }) => {
         templates: face.templates,
       };
 
-      insertPerson(person);
+      insertPerson(person)
     });
   };
 
   const enrollPerson = async () => {
     var options = {
-      mediaType: 'photo',
+      mediaType: 'photo'
     };
 
     launchImageLibrary(options, (response) => {
@@ -203,10 +184,10 @@ const MainPage = ({ navigation }) => {
       registerPerson(response.assets[0]?.uri);
     });
   };
-
+  
   const goToFaceRecognition = () => {
     // Implement navigation logic to FaceRecognitionView here
-    navigation.navigate('FaceRecognition', { persons });
+    navigation.navigate('FaceRecognition', {persons});
   };
 
   const goToSettings = () => {
@@ -231,13 +212,15 @@ const MainPage = ({ navigation }) => {
             style={styles.cardIcon}
           />
           <Text style={styles.cardText}>
-            We offer SDKs for Face Recognition, Liveness Detection, and ID Card
-            Recognition.
+            We offer SDKs for Face Recognition, Liveness Detection, and ID Card Recognition.
           </Text>
         </View>
         <View style={{ height: 12 }} />
         <View style={styles.buttonsRow}>
-          <TouchableOpacity style={styles.button} onPress={enrollPerson}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={enrollPerson}
+          >
             <Image
               source={require('./assets/person_search_icon.png')}
               style={styles.buttonIcon}
@@ -245,7 +228,10 @@ const MainPage = ({ navigation }) => {
             <Text style={styles.buttonText}>Enroll</Text>
           </TouchableOpacity>
           <View style={{ width: 16 }} />
-          <TouchableOpacity style={styles.button} onPress={goToFaceRecognition}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={goToFaceRecognition}
+          >
             <Image
               source={require('./assets/person_search_icon.png')}
               style={styles.buttonIcon}
@@ -254,7 +240,10 @@ const MainPage = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View style={styles.buttonsRow}>
-          <TouchableOpacity style={styles.button} onPress={goToSettings}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={goToSettings}
+          >            
             <Image
               source={require('./assets/settings_icon.png')}
               style={styles.buttonIcon}
@@ -262,7 +251,10 @@ const MainPage = ({ navigation }) => {
             <Text style={styles.buttonText}>Settings</Text>
           </TouchableOpacity>
           <View style={{ width: 16 }} />
-          <TouchableOpacity style={styles.button} onPress={goToAbout}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={goToAbout}
+          >
             <Image
               source={require('./assets/info_icon.png')}
               style={styles.buttonIcon}
@@ -357,12 +349,13 @@ const styles = StyleSheet.create({
   footerIcon: {
     width: 200,
     height: 28,
-    resizeMode: 'contain',
+    resizeMode: 'contain'
   },
   footerText: {
     fontSize: 18,
     color: '#3C3C3C',
   },
 });
+
 
 export default MainPage;

@@ -1,6 +1,0 @@
-framework module facesdk {
-  umbrella header "facesdk.h"
-
-  export *
-  module * { export * }
-}
