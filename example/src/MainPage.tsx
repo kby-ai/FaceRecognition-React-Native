@@ -28,6 +28,13 @@ const MainPage = ({ navigation }) => {
             "lSCbbvPL0P931mWpZggiRvBbud4mkdeKd1OFuldIKRhzQdWZYv+6MmRhtKl1LPfGnfKUqEycdDbM" + 
             "ypCr8wvvb33y6tqePW6700W2pcTr/c1l4Gw4g==");
           console.log("set activation:", ret);
+
+          var ret = await FaceSDKModule.setActivation("RI9A+FD39yFi+NpvgeGlnmekQsLptnzdVKxJfxAj6BSBNu7plMfm213Xhu4LUVKP/ovZvt981T+E" +
+            "J3v4Vv6WxCy7x9nQneXM/Xzw00QUOagN4RpD2BzkuYc3IcZZ0kPYuGfDPtN2gDzG3La3tBSUuLOU" +
+            "YlTdEgEpz18zERN3rMIguYkFpuvHMGzd3hpVFl3WELpy91xsiI/+IzfL68li1B0Jd+uegX5MGhx/" +
+            "0ensQdpTxyDv8Q/w2nDzTX5IbJXmfXpDWXSyDtLktfnzSk8xtmsOFIfCc4cEjGLvC9ClQW6m6L4w" +
+            "YV/IjOe9BTcjfkNM3UsUvXxeopItczBlMgqgTQ==");
+          console.log("set activation:", ret);
         }
 
         ret = await FaceSDKModule.initSDK();
